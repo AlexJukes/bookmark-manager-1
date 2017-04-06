@@ -1,5 +1,6 @@
 feature 'multiple tags' do
   scenario 'I want to add many tags to links in my list' do
+    create_new_user
     visit '/links/new'
     fill_in 'title', with: 'Makers Academy'
     fill_in 'url', with: 'http://makersacademy.com/'

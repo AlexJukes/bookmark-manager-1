@@ -1,7 +1,6 @@
 require 'pry'
 ENV['RACK_ENV']||= 'development'
 require 'sinatra/base'
-require './app/models/link.rb'
 require './app/data_mapper_setup.rb'
 
 class BookmarkManager < Sinatra::Base
@@ -13,6 +12,7 @@ class BookmarkManager < Sinatra::Base
 
   get '/links' do
     @links = Link.all
+    @user_email = User.first.email
     erb :'links/index'
   end
 
@@ -29,8 +29,12 @@ class BookmarkManager < Sinatra::Base
     redirect '/links'
   end
 
-  post '/users' do
+  get '/users/new' do
+    erb :'users/new'
+  end
 
+  post '/users' do
+    User.create(email: params[:email], password: params[:password])
     redirect '/links'
   end
 
@@ -40,8 +44,4 @@ class BookmarkManager < Sinatra::Base
     erb :'links/index'
   end
 
-  get '/users/new' do
-    erb :'users/new'
-
-  end
 end

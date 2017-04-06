@@ -1,5 +1,6 @@
 feature 'filter by tags' do
   scenario 'check that only links tagged with bubbles are shown' do
+    create_new_user
     create_makers_link
     visit '/links/new'
     fill_in 'title', with: "West Ham FC"

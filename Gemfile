@@ -9,6 +9,7 @@ gem "selenium-webdriver"
 gem 'pry'
 gem "sinatra"
 gem "rake"
+gem "bcrypt"
 
 group :test do
   gem "database_cleaner"
