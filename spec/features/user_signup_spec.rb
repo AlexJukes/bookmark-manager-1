@@ -7,5 +7,8 @@ feature 'User signup' do
 
     expect(current_path).to eq("/links")
 
+    expect(page).to have_content "Welcome to bookmark manager!"
+    expect(page).to have_content "You are logged in as test@test.com"
+
   end
 end

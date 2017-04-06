@@ -1,4 +1,5 @@
-<h1> Links </h1>
+<h1> Welcome to bookmark manager! </h1>
+<h2> Links </h2>
 
 <ul id='links'>
   <% @links.each do |link| %>
@@ -7,7 +8,7 @@
       URL:    <%= link.url %>
       Tags:
       <% link.tags.each do |tag| %>
-          <%= tag.name %> 
+          <%= tag.name %>
         <% end %>
     </li>
   <% end %>
