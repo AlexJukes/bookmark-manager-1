@@ -10,5 +10,6 @@ feature 'User signup' do
     expect(page).to have_content "Welcome to bookmark manager!"
     expect(page).to have_content "You are logged in as test@test.com"
 
+    expect{ create_new_user }.to change(User, :count).by(1)
   end
 end
