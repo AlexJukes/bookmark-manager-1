@@ -5,6 +5,7 @@ feature 'User signup' do
     fill_in "password", with: "password"
     click_button "Create Account"
 
-    expect(page).to have_xpath("//links")
+    expect(current_path).to eq("/links")
+
   end
 end
